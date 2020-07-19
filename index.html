@@ -9,6 +9,8 @@
     <title>Dashboard</title>
 </head>
 <body>
+    <!-- <div id="page-container">
+        <div id="content-wrap"> -->
     <nav class="navbar navbar-dark bg-dark navbar-expand-sm p-1">
         <div class="container">
             
@@ -94,7 +96,7 @@
                         <div class="card-header">
                             <h4>Latest Posts <small>(5)</small></h4>
                         </div>
-                        <table class="table table-striped">
+                        <table class="table table-striped" >
                             <thead class="thead-inverse">
                                 <tr>
                                     <th>#</th>
@@ -104,7 +106,7 @@
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="myTable">
 								<tr>
                                     <td scope="row">1</td>
                                     <td>Post One</td>
@@ -183,6 +185,8 @@
             </div>
         </div>
     </section>
+<!-- </div> -->
+
 
     <!-- FOOTER-->
     <footer id="main-footer" class="bg-dark text-white mt-5 p-5">
@@ -209,14 +213,14 @@
                     <form>
                         <div class="form-group">
                             <label for="title" class="form-control-label">Title</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" id="title">
                         </div>
                         <div class="form-group">
                             <label for="category" class="form-control-label">Category</label>
-                            <select class="form-control">
-                                <option value="">Web Development</option>
-                                <option value="">Business</option>
-                                <option value="">Tech Gadgets</option>
+                            <select class="form-control" id="category">
+                                <option value="" >Web Development</option>
+                                <option value="" >Business</option>
+                                <option value="" >Tech Gadgets</option>
                             </select>
                         </div>
                         <div class="form-group bg-faded p-3">
@@ -228,13 +232,13 @@
                         </div>   
                         <div class="form-group">
                             <label for="body">Body</label>
-                            <textarea name="editor1" class="form-control"></textarea>
+                            <textarea name="editor1" class="form-control" id="body"></textarea>
                         </div>              
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button class="btn btn-primary text-white" data-dismiss="modal">Add Post</button>
+                    <button class="btn btn-primary text-white" data-dismiss="modal" id="added">Add Post</button>
                 </div>
             </div>
         </div>
@@ -303,6 +307,7 @@
             </div>
         </div>
     </div>
+</div>
   
 
 
