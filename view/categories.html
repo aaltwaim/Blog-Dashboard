@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Posts</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Categories</title>
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark navbar-expand-sm p-1">
         <div class="container">
-
             <button class="navbar-toggler" type="button" 
                 data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -22,10 +21,10 @@
                         <a href="index.html" class="nav-link">Dashboard</a>
                     </li>
                     <li class="nav-item px-2">
-                        <a href="posts.html" class="nav-link active">Posts</a>
+                        <a href="posts.html" class="nav-link">Posts</a>
                     </li>
                     <li class="nav-item px-2">
-                        <a href="categories.html" class="nav-link">Categories</a>
+                        <a href="categories.html" class="nav-link active">Categories</a>
                     </li>
                     <li class="nav-item px-2">
                         <a href="users.html" class="nav-link">Users</a>
@@ -34,7 +33,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown mr-3">
                         <a href="#" class="nav-link dropdown-toggle"
-                            data-toggle="dropdown"><i class="fa fa-user"></i> Welcome</a>
+                            data-toggle="dropdown"><i class="fa fa-user"></i> Welcome,</a>
                         <div class="dropdown-menu">
                             <a href="profile.html" class="dropdown-item">
                                 <i class="fa fa-user-circle"></i> Profile
@@ -52,11 +51,11 @@
         </div>
     </nav>
 
-    <header id="main-header" class="py-4 bg-primary text-white">
+    <header id="main-header" class="py-4 bg-success text-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1><i class="fa fa-pencil"></i> Posts</h1>
+                    <h1><i class="fa fa-folder-open-o"></i> Categories</h1>
                 </div>
             </div>
         </div>
@@ -68,9 +67,9 @@
             <div class="row">
                 <div class="col-md-6 ml-auto">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search posts...">
+                        <input type="text" class="form-control" placeholder="Search categories...">
                         <span class="input-group-btn">
-                            <button class="btn btn-primary">Search</button>
+                            <button class="btn btn-success">Search</button>
                         </span>
                     </div>
                     
@@ -79,71 +78,25 @@
         </div>
     </section>
 
-    <!-- POSTS -->
-    <section id="posts">
+    <!-- CATEGORIES -->
+    <section id="categories">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Posts  <small>(5)</small></h4>
+                            <h4>Categories</h4>
                         </div>
                         <table class="table table-striped">
                             <thead class="thead-inverse">
                                 <tr>
                                     <th>#</th>
                                     <th>Title</th>
-                                    <th>Category</th>
                                     <th>Date Posted</th>
-                                    <th></th>
                                 </tr>
                             </thead>
-                            <tbody>
-								<tr>
-                                    <td scope="row">1</td>
-                                    <td>Post One</td>
-                                    <td>Web Development</td>
-                                    <td>July 27, 2020</td>
-                                    <td><a href="details.html" class="btn btn-secondary">
-                                        <i class="fa fa-angle-double-right"></i> Details
-                                     </a></td>
-                                </tr>
-								<tr>
-                                    <td scope="row">2</td>
-                                    <td>Post Two</td>
-                                    <td>Tech Gadgets</td>
-                                    <td>August 1, 2020</td>
-                                    <td><a href="details.html" class="btn btn-secondary">
-                                        <i class="fa fa-angle-double-right"></i> Details
-                                     </a></td>
-                                </tr>
-								<tr>
-                                    <td scope="row">3</td>
-                                    <td>Post Three</td>
-                                    <td>Business</td>
-                                    <td>August 4, 2020</td>
-                                    <td><a href="details.html" class="btn btn-secondary">
-                                        <i class="fa fa-angle-double-right"></i> Details
-                                     </a></td>
-                                </tr>
-								<tr>
-                                    <td scope="row">4</td>
-                                    <td>Post Four</td>
-                                    <td>Web Development</td>
-                                    <td>August 10, 2020</td>
-                                    <td><a href="details.html" class="btn btn-secondary">
-                                        <i class="fa fa-angle-double-right"></i> Details
-                                     </a></td>
-                                </tr>
-								<tr>
-                                    <td scope="row">5</td>
-                                    <td>Post Five</td>
-                                    <td>Web Development</td>
-                                    <td>August 18, 2020</td>
-                                    <td><a href="details.html" class="btn btn-secondary">
-                                        <i class="fa fa-angle-double-right"></i> Details
-                                     </a></td>
-                                </tr>
+                            <tbody id="myCategories">
+
                             </tbody>
                         </table>
                         <nav class="ml-4">
@@ -187,5 +140,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+<script src="../script/app.js"></script>
 </body>
 </html>
