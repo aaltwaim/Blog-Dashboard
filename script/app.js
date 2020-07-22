@@ -45,16 +45,12 @@ if(localStorage.getItem("p1")){
 
     if(newKey > 0){
     var categoryNode = $("#myCategories")[0];
-    // console.log(oldNode)
     console.log(localStorage.key($("#myCategories")))
-    // var newKey = Number(localStorage.key($("#myCategories")).split('p')[1])
     console.log(newKey)
-    // var newKey = localStorage.key($("#myCategories"))
     for(var i =1;i <= newKey ; i++){
     $("#myCategories").append(localStorage.getItem("c"+i))
     console.log($(".tca")[0])
     $("#category").append("<option>"+ ($(".tca")[i-1].innerText) +"</option>");
-    // console.log(localStorage.getItem(i))
     }   
 }
 
@@ -69,25 +65,29 @@ var keyLength = Number(localStorage.key($("#myTable")).split('p')[1])
 console.log(keyLength)
 if(keyLength > 0){
     var oldNode = $("#myTable")[0];
-    // console.log(oldNode)
     console.log(localStorage.key($("#myTable")))
-    // var keyLength = Number(localStorage.key($("#myTable")).split('p')[1])
     console.log(keyLength)
-    // var keyLength = localStorage.key($("#myTable"))
     for(var i =1;i<=keyLength+1;i++){
     $("#myTable").append(localStorage.getItem("p"+i))
-    // console.log(localStorage.getItem(i))
     }   
 }
+// if(localStorage.getItem("p1")){
+//     var numberOfItem = Number(localStorage.key($("#myTable")).split('p')[1])
+//     var newValue = 'hello'
+//     for(var i=1; i <= numberOfItem; i++){
+//         if(localStorage.getItem("p1")){
+//         console.log($("#d"+i))
+//         }
+// }
+// }
 }
 
 // add posts and store it in the local storage
 $("#added").click(function() {
-    // var keyLength = Number(localStorage.key($("#myTable")).split('p')[1])
     var sel = document.getElementById("category")
-    var childNode = "<tr>"+'<td>' + counter +'</td><td>' + $('#title').val() +
+    var childNode = "<tr>"+'<td>' + counter +"</td><td id='d"+ counter + "'>" + $('#title').val() +
     '</td><td>' + (sel.options[sel.selectedIndex].text) + '</td><td>'+
-    today + '</td><td>' + "<a href='details.html' class='btn btn-secondary' id='detailsLink'><i class='fa fa-angle-double-right'></i>Details</a>" + '</td>'+"</tr>";
+    today + '</td><td>' + "<a href='details.html' class='btn btn-secondary' class='details' id='detailsLink"+ counter +"'><i class='fa fa-angle-double-right'></i>Details</a>" + '</td>'+"</tr>";
     $("#myTable").append(childNode);
         if(localStorage.getItem("p1")){
             
@@ -106,7 +106,28 @@ $("#added").click(function() {
         }
 
 })
+if(localStorage.getItem("p1")){
+    var numberOfItem = Number(localStorage.key($("#myTable")).split('p')[1])
+    var newValue = 'hello'
+    for(var i=1; i <= numberOfItem; i++){
+        console.log(localStorage.getItem("p"+i))
+        // $("#detailsLink"+i).click(function(){
+        //     var idNumber = $("#detailsLink"+i).attr("id");
+        //     console.log(idNumber)
+        // })
+        if(localStorage.getItem("p1")){
+        // console.log($("#d"+i))
+        }
 
+
+
+}
+}
+$("#removePost").click(function(){
+    var deletedItem = Number(localStorage.key($("#myTable")).split('p')[1])
+    localStorage.removeItem('p'+deletedItem)
+    console.log(deletedItem)
+})
 
 
 
